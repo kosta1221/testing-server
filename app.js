@@ -5,8 +5,8 @@ const morgan = require("morgan");
 
 app.use(cors());
 app.use(express.text());
-app.use(express.raw({ type: "application/octet-stream" }));
-app.use(express.json());
+app.use(express.raw({ type: "application/octet-stream", limit: "25mb" }));
+app.use(express.json({ limit: "25mb" }));
 
 let reqCount = 0;
 
