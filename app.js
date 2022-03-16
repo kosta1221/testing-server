@@ -18,7 +18,6 @@ app.post("/", (req, res) => {
 
     console.log("headers: ", req.headers);
     console.log("body: ", JSON.stringify(req.body, null, 2));
-    // console.log("body: ", req.body);
     console.log("req count: ", reqCount);
     res.send("ok");
   }, 1000);
@@ -41,6 +40,19 @@ app.get("/", (req, res) => {
     console.log("body: ", JSON.stringify(req.body, null, 2));
     res.send("GET ok");
   }, 1000);
+});
+
+app.get("/notimeout", (req, res) => {
+  console.log("headers: ", req.headers);
+  console.log("body: ", JSON.stringify(req.body, null, 2));
+  res.send("GET ok");
+});
+
+app.post("/notimeout", (req, res) => {
+  console.log("headers: ", req.headers);
+  console.log("body: ", JSON.stringify(req.body, null, 2));
+  console.log("req count: ", reqCount);
+  res.send("ok");
 });
 
 module.exports = app;
